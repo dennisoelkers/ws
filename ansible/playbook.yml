@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  vars:
+    home: /Users/dennis
+
   tasks:  
     - name: Install packages with homebrew
       homebrew: name={{ item }} state=present
@@ -11,6 +14,8 @@
         - nvm
         - leiningen
         - jq
+        - maven
+        - ack
 
     - name: Install packages with homebrew casks
       homebrew_cask: name={{ item }} state=present
@@ -29,3 +34,19 @@
         - docker
         - sonos
         - viscosity
+        - vlc
+
+    - name: Checkout prezto (instantly awesome zsh)
+      git: repo=https://github.com/sorin-ionescu/prezto.git dest=/Users/dennis/.zprezto recursive=yes
+
+    - name: Symlink dotfiles
+      file: path={{ home }}/.{{ item }} src={{ home }}/.ws/dotfiles/{{ item }} state=link
+      with_items:
+        - git_commit_msg
+        - gitconfig
+        - vimrc
+        - zlogin
+        - zshrc
+        - zpreztorc
+
+ 
