@@ -1,0 +1,31 @@
+---
+- hosts: all
+  tasks:  
+    - name: Install packages with homebrew
+      homebrew: name={{ item }} state=present
+      with_items:
+        - wget
+        - git
+        - vim
+        - nmap
+        - nvm
+        - leiningen
+        - jq
+
+    - name: Install packages with homebrew casks
+      homebrew_cask: name={{ item }} state=present
+      with_items:
+        - google-chrome
+        - firefox
+        - licecap
+        - google-hangouts
+        - slack
+        - sublime-text
+        - textmate
+        - spotify
+        - steam
+        - intellij-idea
+        - adium
+        - docker
+        - sonos
+        - viscosity
