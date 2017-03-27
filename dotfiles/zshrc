@@ -35,10 +35,11 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 unsetopt share_history
 
 alias git=/usr/local/bin/git
+alias travis=travis_travis
 
 . ~/.nvm/nvm.sh
 
-export SDKROOT=`xcrun -sdk macosx10.11 --show-sdk-path`
+export SDKROOT=`xcrun -sdk macosx10.12 --show-sdk-path`
 export SDK_DIR=$SDKROOT
 export SDK_NAME="macosx10.11"
 
