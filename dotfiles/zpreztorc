@@ -28,6 +28,7 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
+  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
@@ -37,7 +38,8 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'osx' \
   'ssh' \
-  'screen'
+  'screen' \
+  'syntax-highlighting'
 
 #
 # Autosuggestions
@@ -51,7 +53,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
