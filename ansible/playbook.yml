@@ -7,34 +7,44 @@
     - name: Install packages with homebrew
       homebrew: name={{ item }} state=present
       with_items:
-        - wget
+        - ack
+        - atom
+        - fswatch
+        - ghi
         - git
-        - vim
+        - jq
+        - leiningen
+        - maven
+        - neovim/neovim/neovim
         - nmap
         - nvm
-        - leiningen
-        - jq
-        - maven
-        - ack
+        - vim
+        - wget
 
     - name: Install packages with homebrew casks
       homebrew_cask: name={{ item }} state=present
       with_items:
-        - google-chrome
+        - adium
+        - dash
+        - discord
+        - docker
         - firefox
-        - licecap
+        - google-chrome
         - google-hangouts
+        - intellij-idea
+        - keepassx
+        - licecap
+        - robomongo
         - slack
-        - sublime-text
-        - textmate
+        - sonos
         - spotify
         - steam
-        - intellij-idea
-        - adium
-        - docker
-        - sonos
+        - sublime-text
+        - textmate
         - viscosity
         - vlc
+        - wireshark
+        - zoomus
 
     - name: Checkout prezto (instantly awesome zsh)
       git: repo=https://github.com/sorin-ionescu/prezto.git dest=/Users/dennis/.zprezto recursive=yes
@@ -46,7 +56,7 @@
         - gitconfig
         - vimrc
         - zlogin
-        - zshrc
         - zpreztorc
+        - zshrc
 
  
