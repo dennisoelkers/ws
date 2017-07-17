@@ -20,6 +20,7 @@
         - nvm
         - vim
         - wget
+        - zsh
 
     - name: Install packages with homebrew casks
       homebrew_cask: name={{ item }} state=present
