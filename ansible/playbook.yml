@@ -38,6 +38,7 @@
         - docker
         - evernote
         - firefox
+        - font-dejavu-sans-mono-for-powerline
         - google-chrome
         - google-hangouts
         - insomnia
@@ -76,4 +77,5 @@
     - name: Install Vundle plugins
       shell: vim +PluginInstall +qall
 
-
+    - name: Checkout powerline9k (zsh theme)
+      git: repo=https://github.com/bhilburn/powerlevel9k.git dest=/Users/dennis/.zsh/powerlevel9k
