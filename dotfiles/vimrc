@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set termguicolors
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,6 +17,10 @@ Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'sjl/badwolf'
 Plugin 'elzr/vim-json'
+Plugin 'aradunovic/perun.vim'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,5 +46,13 @@ set expandtab
 
 set number
 set showcmd 
+set nofoldenable
 
+" Settings for pangloss/vim-javascript:
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
 

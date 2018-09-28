@@ -28,24 +28,32 @@ export EDITOR=/usr/local/bin/vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 unsetopt share_history
 
 alias git=/usr/local/bin/git
-alias travis=travis_travis
+alias google-chrome=/Applications/Google\\\ Chrome.app/Contents/MacOS/Google\\\ Chrome
+alias groovysh="groovysh -Djava.awt.headless=true"
+alias weather="curl wttr.in/Berlin"
+alias jrnl="vim +'normal Go' +'r!date' ~/journal"
 
 . ~/.nvm/nvm.sh
 
-export SDKROOT=`xcrun -sdk macosx10.12 --show-sdk-path`
+export SDKROOT=`xcrun -sdk macosx10.14 --show-sdk-path`
 export SDK_DIR=$SDKROOT
-export SDK_NAME="macosx10.11"
+export SDK_NAME="macosx10.13"
 
 [[ -s "$HOME/.zprezto/runcoms/zshrc" ]] && source "$HOME/.zprezto/runcoms/zshrc"
 [[ -s "$HOME/.zprezto/init.zsh" ]] && source "$HOME/.zprezto/init.zsh"
 
 setopt no_share_history
 unsetopt share_history
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# added by travis gem
+[ -f /Users/dennis/.travis/travis.sh ] && source /Users/dennis/.travis/travis.sh
 

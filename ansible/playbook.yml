@@ -3,39 +3,49 @@
   vars:
     home: /Users/dennis
 
-  tasks:  
+  tasks:
     - name: Install packages with homebrew
       homebrew: name={{ item }} state=present
       with_items:
         - ack
-        - atom
+        - fd
         - fswatch
         - ghi
         - git
+        - gpg
         - jq
         - leiningen
         - maven
+        - mongodb
         - neovim/neovim/neovim
         - nmap
         - nvm
+        - pinentry-mac
+        - rpm
+        - travis
         - vim
         - wget
         - zsh
+        - z
 
     - name: Install packages with homebrew casks
       homebrew_cask: name={{ item }} state=present
       with_items:
         - adium
+        - atom
         - dash
         - discord
         - docker
+        - evernote
         - firefox
         - google-chrome
         - google-hangouts
+        - insomnia
         - intellij-idea
+        - iterm2
         - keepassx
         - licecap
-        - robomongo
+        - robo-3t
         - slack
         - sonos
         - spotify
@@ -43,12 +53,12 @@
         - sublime-text
         - textmate
         - viscosity
+        - visual-studio-code
         - vlc
         - wireshark
-        - zoomus
 
     - name: Checkout prezto (instantly awesome zsh)
-      git: repo=https://github.com/sorin-ionescu/prezto.git dest=/Users/dennis/.zprezto recursive=yes
+      git: repo=https://github.com/sorin-ionescu/prezto.git dest=/Users/dennis/.zprezto recursive=yes track_submodules=yes force=yes
 
     - name: Symlink dotfiles
       file: path={{ home }}/.{{ item }} src={{ home }}/.ws/dotfiles/{{ item }} state=link
@@ -60,4 +70,10 @@
         - zpreztorc
         - zshrc
 
- 
+    - name: Checkout Vundle (vim plugin manager)
+      git: repo=https://github.com/VundleVim/Vundle.vim.git dest=/Users/dennis/.vim/bundle/Vundle.vim recursive=yes
+
+    - name: Install Vundle plugins
+      shell: vim +PluginInstall +qall
+
+
