@@ -40,8 +40,6 @@ alias groovysh="groovysh -Djava.awt.headless=true"
 alias weather="curl wttr.in/Berlin"
 alias jrnl="vim +'normal Go' +'r!date' ~/journal"
 
-. ~/.nvm/nvm.sh
-
 export SDKROOT=`xcrun -sdk macosx10.14 --show-sdk-path`
 export SDK_DIR=$SDKROOT
 export SDK_NAME="macosx10.13"
@@ -52,9 +50,10 @@ export SDK_NAME="macosx10.13"
 setopt no_share_history
 unsetopt share_history
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+#. "/usr/local/opt/nvm/nvm.sh"
 
 # added by travis gem
 [ -f /Users/dennis/.travis/travis.sh ] && source /Users/dennis/.travis/travis.sh
 
-source  ~/.zsh/powerlevel9k/powerlevel9k.zsh-theme
+#source  ~/.zsh/powerlevel9k/powerlevel9k.zsh-theme
+source ~/.zsh/elprompto/elprompto.zsh
